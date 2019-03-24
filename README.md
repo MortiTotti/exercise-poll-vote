@@ -1,68 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# exercise-poll-vote
+A simple React app using **`http://pollsapi.docs.apiary.io`** as its api service.
 
-## Available Scripts
+## Explanation
+This is a React application (using react-semnatic-ui) to demonstrate a simple voting system.
+The goal of this application is to display a list of questions and user can vote to the questions or he can create his own question.
 
-In the project directory, you can run:
+### React Installation & Run
+- Run **`npm i`** to install the packages.
+- Run **`npm start`** to start the application.
 
-### `npm start`
+### Tests
+ Under implementation!!!.
+ - To run the tests simply execute  **`npm run test`**.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### React
+##### Explanation
+This application has been created by CRNA. There are 2 main screens in this application:
+1. **`InvoicesList View`**
+  	* *`index.js`*: it containts all the logic for **`InvoicesList View`**
+	* *`Layout`*: Base presentational component for index.js
+	* *`List`*: Presentational component to list all the invoices
+2. **`InvoiceModal View`**
+  	* *`index.js`*: it containts all the logic for **`InvoiceModal View`**
+	* *`Layout`*: Base presentational component for index.js
+	* **`Invoice-Information`**: 
+    	1. *`index.js`*: it containts all the logic for **`InvoiceInformation View`**
+  		2. *`Layout`*: Base presentational component for index.js
+  		3. *`Layout-Desktop`*: Presentational component for Desktop view port
+    	4. *`Layout-Mobile`*: Presentational component for mobile view port
+	* **`Payments`**: 
+    	1. *`index.js`*: it containts all the logic for **`InvoiceInformation View`**
+  		2. *`Layout`*: Base presentational component for index.js
+  		3. *`Bank-Payments-List`*: Presentational component to display the search result of `/payments/:iban` endpoint
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+##### Configuration
+Settings for this application are inside a file named **`app.json`**. You can find this file in the following path: **`./client/app.json`**.
 
-### `npm test`
+| key | Description & Values |
+| --- | --- |
+| url | To set the server side endpoint base url   |
+| defaultIBAN | To set the default IBAN when a user doesn't choose `From Bank Account` option in **`InvoiceInformation View`** |
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screen shots
+##### Sign in screen
+<img src="https://github.com/MortiTotti/react-native-user-management/blob/master/screenshots/sign-in.png" width="400" aspectRatio="1/2">
 
-### `npm run build`
+##### Sign up screen
+<img src="https://github.com/MortiTotti/react-native-user-management/blob/master/screenshots/sign-up.png" width="400" aspectRatio="1/2">
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### Home - Users screen
+<img src="https://github.com/MortiTotti/react-native-user-management/blob/master/screenshots/users-screen.jpg" width="400" aspectRatio="1/2">
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+##### User Main Information
+<img src="https://github.com/MortiTotti/react-native-user-management/blob/master/screenshots/user-edit-screen.png" width="400" aspectRatio="1/2">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### User Addresses
+<img src="https://github.com/MortiTotti/react-native-user-management/blob/master/screenshots/user-edit-address.png" width="400" aspectRatio="1/2">
 
-### `npm run eject`
+##### Delete User 
+<img src="https://github.com/MortiTotti/react-native-user-management/blob/master/screenshots/user-delete-account.png" width="400" aspectRatio="1/2">
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
