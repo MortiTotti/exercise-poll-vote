@@ -1,5 +1,5 @@
 import React from 'react';
-import { QuestionActions } from "Actions";
+import { getQuestions } from "Apis";
 import Layout from "./Layout";
 import "./style.css";
 
@@ -13,8 +13,7 @@ class QuestionList extends React.Component {
     }
 
     componentDidMount() {
-        QuestionActions
-            .getQuestions()
+        getQuestions()
             .then(questions => {
                 this.setState({ questions });
                 console.log(questions)

@@ -30,11 +30,10 @@ module.exports = {
       Assets: path.resolve(__dirname, 'src/assets'),
       Components: path.resolve(__dirname, 'src/components'),
       Routes: path.resolve(__dirname, 'src/routes'),
-      Reducers: path.resolve(__dirname, 'src/reducers'),
-      Actions: path.resolve(__dirname, 'src/actions'),
+      Views: path.resolve(__dirname, 'src/views'),
+      Apis: path.resolve(__dirname, 'src/apis'),
       Constants: path.resolve(__dirname, 'src/constants'),
-      Helpers: path.resolve(__dirname, 'src/helpers'),
-      Pages: path.resolve(__dirname, 'src/pages'),
+      Helpers: path.resolve(__dirname, 'src/helpers')
     }
   },
 

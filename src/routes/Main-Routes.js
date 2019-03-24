@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import QuestionsList from 'Pages/questions-list';
-import QuestionDetails from 'Pages/question-details';
+import QuestionsList from 'Views/questions-list';
+import QuestionDetails from 'Views/question-details';
 
-const AppRoutes = () =>
+const MainRoutes = () =>
     <Router>
         <Switch>
             <Route path='/questions/:id' component={QuestionDetails} />
@@ -13,5 +13,5 @@ const AppRoutes = () =>
         </Switch>
     </Router>
 
-export default AppRoutes;
+export default MainRoutes;
 

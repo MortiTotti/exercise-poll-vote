@@ -25,8 +25,9 @@ class QuestionDetails extends React.Component {
         let allVotes = choices.map(t => t.votes).reduce((a, b) => a + b);
         this.setState({ allVotes })
     }
+
     _handleRowClick = () => {
-        
+
     }
 
     render() {
