@@ -30,7 +30,7 @@ This application has been created by CRNA. There are 2 main screens in this appl
 	* *`Choice-Item-Desktop-Layout`*: Presentational component to show every question choice in desktop mode
 	* *`Choice-Item-Mobile-Layout`*: Presentational component to show every question choice in mobile mode
 2. **`QuestionInsert View`**
-  	* *`index.js`*: it containts all the logic for **`InvoiceModal View`**
+  	* *`index.js`*: it containts all the logic for **`QuestionInsert View`**
 	* *`Layout`*: Base presentational component for index.js
 	* *`Question-Choice-List`*: Presentational component to insert and delete the question choices, all its logic are inside the `index.js` file
 
@@ -42,21 +42,18 @@ Settings for this application are inside a file named **`app.json`**. You can fi
 | url | To set the server side endpoint base url   |
 
 ### Screen shots
-##### Sign in screen
-<img src="https://github.com/MortiTotti/react-native-user-management/blob/master/screenshots/sign-in.png" width="400" aspectRatio="1/2">
+##### Questions list - Desktop
+<img src="https://github.com/MortiTotti/exercise-poll-vote/blob/master/screenshots/questions-list-desktop.png" width="750" aspectRatio="1/2">
 
-##### Sign up screen
-<img src="https://github.com/MortiTotti/react-native-user-management/blob/master/screenshots/sign-up.png" width="400" aspectRatio="1/2">
+##### Questions list - Mobile
+<img src="https://github.com/MortiTotti/exercise-poll-vote/blob/master/screenshots/questions-list-mobile.png" width="400" aspectRatio="1/2">
 
-##### Home - Users screen
-<img src="https://github.com/MortiTotti/react-native-user-management/blob/master/screenshots/users-screen.jpg" width="400" aspectRatio="1/2">
+##### Questions insert
+<img src="https://github.com/MortiTotti/exercise-poll-vote/blob/master/screenshots/question-insert.png" width="750" aspectRatio="1/2">
 
-##### User Main Information
-<img src="https://github.com/MortiTotti/react-native-user-management/blob/master/screenshots/user-edit-screen.png" width="400" aspectRatio="1/2">
+##### Question details - Desktop
+<img src="https://github.com/MortiTotti/exercise-poll-vote/blob/master/screenshots/question-details-desktop.png" width="750" aspectRatio="1/2">
 
-##### User Addresses
-<img src="https://github.com/MortiTotti/react-native-user-management/blob/master/screenshots/user-edit-address.png" width="400" aspectRatio="1/2">
-
-##### Delete User 
-<img src="https://github.com/MortiTotti/react-native-user-management/blob/master/screenshots/user-delete-account.png" width="400" aspectRatio="1/2">
+##### Question details - Mobile
+<img src="https://github.com/MortiTotti/exercise-poll-vote/blob/master/screenshots/question-details-mobile.png" width="400" aspectRatio="1/2">
 
