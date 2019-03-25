@@ -1,4 +1,4 @@
-# exercise-poll-vote
+# Exercise Poll
 A simple React app using **`http://pollsapi.docs.apiary.io`** as its api service.
 
 ## Explanation
