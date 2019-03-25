@@ -19,7 +19,7 @@ To know more about the server apis go to `https://pollsapi.docs.apiary.io/`.
 
 ### React
 ##### Explanation
-This application has been created by CRNA. There are 2 main screens in this application:
+This application has been created by CRNA. There are 3 main screens in this application:
 1. **`QuestionList View`**
   	* *`index.js`*: it containts all the logic for **`QuestionList View`**
 	* *`Layout`*: Base presentational component for index.js
