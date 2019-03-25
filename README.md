@@ -1,5 +1,5 @@
 # Exercise Poll
-A simple React app using **`http://pollsapi.docs.apiary.io`** as its api service.
+A web application using React for client side and **`http://pollsapi.docs.apiary.io`** as api service.
 
 ## Explanation
 This is a React application (using react-semnatic-ui) to demonstrate a simple voting system.
@@ -19,7 +19,7 @@ To know more about the server apis go to `https://pollsapi.docs.apiary.io/`.
 
 ### React
 ##### Explanation
-This application has been created by CRNA. There are 3 main screens in this application:
+This application created by CRNA. There are 3 main screens in this application:
 1. **`QuestionList View`**
   	* *`index.js`*: it containts all the logic for **`QuestionList View`**
 	* *`Layout`*: Base presentational component for index.js
