@@ -13,33 +13,33 @@ The goal of this application is to display a list of questions and user can vote
  Under implementation!!!.
  - To run the tests simply execute  **`npm run test`**.
 
+### Server
+##### Explanation
+To know more about the server apis go to `https://pollsapi.docs.apiary.io/`.
+
 ### React
 ##### Explanation
 This application has been created by CRNA. There are 2 main screens in this application:
-1. **`InvoicesList View`**
-  	* *`index.js`*: it containts all the logic for **`InvoicesList View`**
+1. **`QuestionList View`**
+  	* *`index.js`*: it containts all the logic for **`QuestionList View`**
 	* *`Layout`*: Base presentational component for index.js
 	* *`List`*: Presentational component to list all the invoices
-2. **`InvoiceModal View`**
+2. **`QuestionDetails View`**
+  	* *`index.js`*: it containts all the logic for **`QuestionDetails View`**
+	* *`Layout`*: Base presentational component for index.js
+	* *`Choice-Item-Desktop-Layout`*: Presentational component to show every question choice in desktop mode
+	* *`Choice-Item-Mobile-Layout`*: Presentational component to show every question choice in mobile mode
+2. **`QuestionInsert View`**
   	* *`index.js`*: it containts all the logic for **`InvoiceModal View`**
 	* *`Layout`*: Base presentational component for index.js
-	* **`Invoice-Information`**: 
-    	1. *`index.js`*: it containts all the logic for **`InvoiceInformation View`**
-  		2. *`Layout`*: Base presentational component for index.js
-  		3. *`Layout-Desktop`*: Presentational component for Desktop view port
-    	4. *`Layout-Mobile`*: Presentational component for mobile view port
-	* **`Payments`**: 
-    	1. *`index.js`*: it containts all the logic for **`InvoiceInformation View`**
-  		2. *`Layout`*: Base presentational component for index.js
-  		3. *`Bank-Payments-List`*: Presentational component to display the search result of `/payments/:iban` endpoint
+	* *`Question-Choice-List`*: Presentational component to insert and delete the question choices, all its logic are inside the `index.js` file
 
 ##### Configuration
-Settings for this application are inside a file named **`app.json`**. You can find this file in the following path: **`./client/app.json`**.
+Settings for this application are inside a file named **`app.json`**. You can find this file in the following path: **`./app.json`**.
 
 | key | Description & Values |
 | --- | --- |
 | url | To set the server side endpoint base url   |
-| defaultIBAN | To set the default IBAN when a user doesn't choose `From Bank Account` option in **`InvoiceInformation View`** |
 
 ### Screen shots
 ##### Sign in screen
