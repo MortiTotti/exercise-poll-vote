@@ -1,82 +1,45 @@
 import React from 'react';
-import { Table, Grid, Responsive, Label, Progress, Container, Header, Button, Card, Statistic } from "semantic-ui-react";
+import { Table, Grid, Label, Container, Header, Button } from "semantic-ui-react";
+import { ViewContainer } from "Components";
+import ChoiceItemMobileLayout from "./Choice-Item-Mobile-Layout";
+import ChoiceItemDesktopLayout from "./Choice-Item-Desktop-Layout";
 
-const MobileCard = ({ item, choice, activeRow }) =>
-    <Card fluid={true}>
-        <Card.Content>
-            <Card.Header>{choice.choice}</Card.Header>
-            <Card.Meta>
-                <Statistic size='mini' horizontal>
-                    <Statistic.Value>
-                        <Label style={{ marginTop: '10px' }} color='red'>{choice.votes}</Label>
-                    </Statistic.Value>
-                    <Statistic.Label style={{ marginTop: '10px' }}>votes</Statistic.Label>
-                </Statistic>
+const RowItem = ({ item, choice, onClick, active }) => {
+    const votePercentage = (item.allVotes) ? (choice.votes / item.allVotes * 100).toFixed(1) : 0;
+    return (
+        <React.Fragment>
+            <ChoiceItemMobileLayout item={item} votePercentage={votePercentage} choice={choice} active={active} onClick={onClick} />
+            <ChoiceItemDesktopLayout item={item} votePercentage={votePercentage} choice={choice} active={active} onClick={onClick} />
+        </React.Fragment>
+    );
+}
 
-            </Card.Meta>
-            <Card.Description>
-                {(choice.votes / item.allVotes * 100).toFixed(1)}%
-            </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-            <Progress
-                style={{ margin: '0' }}
-                size='medium'
-                percent={(choice.votes / item.allVotes * 100).toFixed(1)}
-                color='red' />
-        </Card.Content>
-    </Card>
-
-const Layout = ({ item, activeRow }) => (
-    <Container style={{ marginTop: '20px' }}>
+const Layout = ({ item, handleRowClick, saveVote, activeIndex, back }) => (
+    <ViewContainer>
         <Table>
             <Table.Header fullWidth>
                 <Table.Row>
                     <Table.HeaderCell colSpan='6'>
-                        <Responsive as={Label} maxWidth={769} color='red' size='big' ribbon>Question Details</Responsive>
-                        <Responsive as={Label} minWidth={770} color='blue' size='big' ribbon>Question Details</Responsive>
+                        <Label color='blue' size='large' ribbon>Question Details</Label>
                         <Header> Question: {item.question}</Header>
                     </Table.HeaderCell>
                 </Table.Row>
             </Table.Header>
             <Table.Body className="table-row">
                 {item.choices.map((choice, index) =>
-                    <Table.Row as='tr' active={activeRow} key={index}>
-                        <Responsive as={Table.Cell} maxWidth={769}>
-                            <MobileCard item={item} choice={choice} />
-                        </Responsive>
-                        <Responsive as={Table.Cell} minWidth={770}>{choice.choice}</Responsive>
-                        <Responsive as={Table.Cell} minWidth={770}>
-                            <Statistic size='mini' horizontal>
-                                <Statistic.Value>
-                                    <Label size="large" color='blue'>{choice.votes}</Label>
-                                </Statistic.Value>
-                                <Statistic.Label>votes</Statistic.Label>
-                            </Statistic>
-                        </Responsive>
-                        <Responsive as={Table.Cell} minWidth={770} verticalAlign='middle'>
-                            <Grid>
-                                <Grid.Row>
-                                    <Grid.Column width='3'>
-                                        {(choice.votes / item.allVotes * 100).toFixed(1)}%
-                                    </Grid.Column>
-                                    <Grid.Column width='13'>
-                                        <Progress
-                                            style={{ margin: '0' }}
-                                            size='medium'
-                                            percent={(choice.votes / item.allVotes * 100).toFixed(1)}
-                                            color='blue' />
-                                    </Grid.Column>
-                                </Grid.Row>
-                            </Grid>
-                        </Responsive>
-                    </Table.Row>
+                    <RowItem key={index} item={item} choice={choice} active={activeIndex === index} onClick={() => handleRowClick(choice, index)} />
                 )}
             </Table.Body>
         </Table>
-        <Responsive as={Button} maxWidth={769} floated="right" color="red">Save vote</Responsive>
-        <Responsive as={Button} minWidth={770} floated="right" color="linkedin">Save vote</Responsive>
-    </Container>
+        <Grid>
+            <Grid.Row>
+                <Grid.Column style={{ paddingBottom: '20px' }}>
+                    <Button onClick={back}>Back</Button>
+                    <Button onClick={saveVote} floated="right" color="green">Save vote</Button>
+                </Grid.Column>
+            </Grid.Row>
+        </Grid>
+    </ViewContainer>
 )
 
 export default Layout;

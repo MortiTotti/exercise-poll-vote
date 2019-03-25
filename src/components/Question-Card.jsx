@@ -3,7 +3,7 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 import { Card, Label } from 'semantic-ui-react';
 
-const CardView = ({ item }) =>
+const QuestionCard = ({ item }) =>
     <Card as={Link} to={{ pathname: `${item.url}`, state: { ...item } }}>
         <Card.Content>
             {item.question}
@@ -14,13 +14,13 @@ const CardView = ({ item }) =>
             </Card.Meta>
         </Card.Content>
         <Card.Content extra>
-            <span>
-                Choices:
-                <Label circular color='red'>
+            <Label color='orange'>
+                Choices
+                <Label.Detail>
                     {item.choices.length}
-                </Label>
-            </span>
+                </Label.Detail>                
+            </Label>
         </Card.Content>
     </Card>
 
-export default CardView;
+export default QuestionCard;

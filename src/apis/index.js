@@ -1,6 +1,6 @@
-import { getQuestions, saveQuestion } from "./Question-Actions";
+import { getQuestions, addQuestion } from "./Question-Actions";
 
 export {
     getQuestions,
-    saveQuestion
+    addQuestion
 }

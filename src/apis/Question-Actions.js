@@ -11,7 +11,7 @@ export const getQuestions = async () => {
     }
 };
 
-export const saveQuestion = async (question) => {
+export const addQuestion = async (question) => {
     try {
         let response = await HttpClient.postAsync(`${constants.SERVER_HOST_URL}/questions`, question);
         return Promise.resolve(response);

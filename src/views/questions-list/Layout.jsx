@@ -1,37 +1,42 @@
 import React from 'react';
-import { Card, Icon, Container, Label, Segment, Divider, Responsive, Button } from 'semantic-ui-react'
-import CardView from "./Card-View";
+import { Link } from "react-router-dom";
+import { Dimmer, Segment, Loader, Card, Icon, Label, Divider, Responsive, Button } from 'semantic-ui-react';
+import { ViewContainer, QuestionCard } from "Components";
+import "./style.css";
 
-const Layout = ({ questions }) => (
-  <Container style={{ marginTop: '20px' }} as={Segment}>
-    <Label color='red' size='big' ribbon>
+const ListHeader = () =>
+  <React.Fragment>
+    <Label color='blue' size='large' ribbon>
       Questions
     </Label>
-    <Button floated='right' color='red'>
-      <Icon name="add"/> Add question
+    <Button floated="right" basic>
+      <Link to="questioninsert">
+        <Icon name="add" /> Add question
+    </Link>
     </Button>
+  </React.Fragment>
+
+const Layout = ({ isLoading, questions }) =>
+  <ViewContainer>
+    <ListHeader />
     <Divider />
-    <Responsive maxWidth={500} >
-      <Card.Group itemsPerRow={1}>
-        {questions.map((item, index) => <CardView key={item.url + index} item={item} />)}
-      </Card.Group>
-    </Responsive>
-    <Responsive {...Responsive.onlyMobile} >
-      <Card.Group itemsPerRow={2}>
-        {questions.map((item, index) => <CardView key={item.url + index} item={item} />)}
-      </Card.Group>
-    </Responsive>
-    <Responsive {...Responsive.onlyTablet} >
-      <Card.Group itemsPerRow={3}>
-        {questions.map((item, index) => <CardView key={item.url + index} item={item} />)}
-      </Card.Group>
-    </Responsive>
-    <Responsive {...Responsive.onlyComputer} >
-      <Card.Group itemsPerRow={4}>
-        {questions.map((item, index) => <CardView key={item.url + index} item={item} />)}
-      </Card.Group>
-    </Responsive>
-  </Container>
-);
+    <Segment basic>
+      <Dimmer active={isLoading} inverted>
+        <Loader inverted />
+      </Dimmer>
+      <Responsive
+        as={Card.Group}
+        {...Responsive.onlyMobile}
+        itemsPerRow={1}>
+        {questions.map((item, index) => <QuestionCard key={item.url + index} item={item} />)}
+      </Responsive>
+      <Responsive
+        as={Card.Group}
+        minWidth={Responsive.onlyTablet.minWidth}
+        itemsPerRow={4}>
+        {questions.map((item, index) => <QuestionCard key={item.url + index} item={item} />)}
+      </Responsive>
+    </Segment>
+  </ViewContainer>
 
 export default Layout;
